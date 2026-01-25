@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.dark body {
+  @apply bg-slate-900 text-white;
+}
+
+button,
+[role="button"],
+a[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Force common text utilities to white in dark mode so text is readable
+   (this overrides many Tailwind text-gray-* utilities used across components)
+   We avoid touching colored semantic classes like text-green-600 explicitly so
+   status/intent colors still show; add more overrides if you find other classes */
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-gray-400,
+.dark .text-gray-300,
+.dark .text-gray-200,
+.dark .text-slate-200,
+.dark .text-slate-300 {
+  color: #fff !important;
+}
+
+/* Ensure headings and body text are white in dark mode by default */
+.dark body,
+.dark body h1,
+.dark body h2,
+.dark body h3,
+.dark body p,
+.dark body span,
+.dark body label,
+.dark body li {
+  color: #fff;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-modal-in {
+    animation: modalIn 0.18s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .shake {
+    animation: shake .3s ease-in-out;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+}
