@@ -1,0 +1,46 @@
+# Root .dockerignore
+# Ignore node modules from subprojects
+**/node_modules
+**/node_modules/**
+
+# Environment and secrets
+.env
+.env.*
+*.local
+
+# Git
+.git
+.gitignore
+
+# OS + Editor
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Logs
+npm-debug.log*
+*.log
+
+# Build outputs and caches
+dist
+build
+coverage
+.cache
+.vite
+
+# Application specific
+uploads
+temp
+screenshots
+
+# Docker files (if you build images from subfolders, you probably don't want to include other Dockerfiles)
+Dockerfile*
+
+# Tests and temp artifacts
+tests/__snapshots__
+*.test.js
+
+# misc
+*.tgz
+

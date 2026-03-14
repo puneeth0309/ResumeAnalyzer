@@ -1,0 +1,24 @@
+# Client .dockerignore
+node_modules
+npm-debug.log*
+.env
+.env.*
+.DS_Store
+.vscode
+.idea
+dist
+build
+coverage
+.vite
+
+# local dev artifacts
+.svelte-kit
+
+# Don't include tests or source maps
+tests
+*.map
+
+# Git
+.git
+.gitignore
+

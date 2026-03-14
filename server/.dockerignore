@@ -1,0 +1,20 @@
+# Server .dockerignore
+node_modules
+npm-debug.log*
+.env
+.env.*
+*.log
+.DS_Store
+.vscode
+.idea
+uploads
+temp
+sql/*.sql
+
+# Don't include tests in image
+tests
+
+# Git
+.git
+.gitignore
+
